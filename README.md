@@ -12,7 +12,7 @@ Examples are at the [bottom](#examples).
 
 ### Usage
 
-When running the code, you will be prompted to enter 4 pieces of information:
+When running the code, you will be prompted to enter 5 pieces of information:
 - Number of Tiling Layers/Subdivions 
     - This code generates the tiling by subdiving triangles, which are in pairs to from the rhombi
     - This gets intricate quickly, and depending on your computer, anything above 10 may not render so quickly
@@ -56,7 +56,7 @@ A basic rundown of the functionality of my code is:
 ### Examples
 
 #### 2 Tiling Layers
-![penrose2-1.png](penrose2-1.png)![penrose2-2.png](penrose2-2.png)![penrose2-3.png](penrose2-3.png)
+![penrose2-1.png](penrose2-1.png)&nbsp;![penrose2-2.png](penrose2-2.png)&nbsp;![penrose2-3.png](penrose2-3.png)
 
 #### 5 Tiling Layers
 ![penrose5-1.png](penrose5-1.png)
