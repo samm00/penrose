@@ -56,9 +56,7 @@ A basic rundown of the functionality of my code is:
 ### Examples
 
 #### 2 Tiling Layers
-![penrose2-1.png](penrose2-1.png)
-![penrose2-2.png](penrose2-2.png)
-![penrose2-3.png](penrose2-3.png)
+![penrose2-1.png](penrose2-1.png)![penrose2-2.png](penrose2-2.png)![penrose2-3.png](penrose2-3.png)
 
 #### 5 Tiling Layers
 ![penrose5-1.png](penrose5-1.png)
