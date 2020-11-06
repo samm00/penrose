@@ -1,7 +1,3 @@
-# In the README provide the source to the source code
-# Make sure to specify all the additions you made!!!!
-# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 import math, cmath, cairo, random, re
 
 # User input
@@ -16,7 +12,7 @@ except ValueError:
     print("\nI get that this one is a bit trickier; the format should be: ['integer' 'integer']")
     raise SystemExit(0)
 
-try: c1, c2, c3 = tuple(input("\nEnter the desired colors, separated by spaces (ex: 'red blue grey') ['thin rhombi', 'thicc rhombi', 'outline']\nOptions: random, red, orange, yellow, green, blue, purple, grey, brown, black, white\nYou can also provide a hex value (ex. ['a48432' 'c27320' 'da3931'])\n").split())
+try: c1, c2, c3 = tuple(input("\nEnter the desired colors, separated by spaces (ex: 'red blue grey'): ").split())
 except ValueError:
     msg = ["The format should be: ['color' 'color' 'color']", "Really? You got the last one formatted right."]
     print("\n" + random.choice(msg))
