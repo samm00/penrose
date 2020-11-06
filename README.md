@@ -17,6 +17,11 @@ When running the code, you will be prompted to enter 4 pieces of information:
     - This code generates the tiling by subdiving triangles, which are in pairs to from the rhombi
     - This gets intricate quickly, and depending on your computer, anything above 10 may not render so quickly
     - Example: `7`
+- Zoom
+    - You can decide whether or not to zoom in
+    - When zoomed in, the entire rectangle is filled with the pattern
+    - If you want the whole decagon (currently only with transparent background), you can choose to not zoom in
+    - The only valid options are `in` and `out`
 - Image Resolution
     - This code will output the tiling as a png file
     - You can specify the resolution of the image
@@ -50,12 +55,18 @@ A basic rundown of the functionality of my code is:
 
 ### Examples
 
+#### 2 Tiling Layers
+![penrose2-1.png](penrose2-1.png)
+![penrose2-2.png](penrose2-2.png)
+![penrose2-3.png](penrose2-3.png)
+
 #### 5 Tiling Layers
 ![penrose5-1.png](penrose5-1.png)
 
 #### 7 Tiling Layers
 ![penrose7-1.png](penrose7-1.png)
 ![penrose7-2.png](penrose7-2.png)
+![penrose7-3.png](penrose7-3.png)
 
 #### 10 Tiling Layers
 ![penrose10-1.png](penrose10-1.png)

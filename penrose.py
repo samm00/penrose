@@ -1,10 +1,23 @@
 import math, cmath, cairo, random, re
 
 # User input
-try: divisions = int(input("Enter the desired number of tiling layers/subdivisions (ex. 7): "))
+try: divisions = int(input("Enter the desired number of tiling layers/subdivisions (ex. '7'): "))
 except ValueError:
     msg = ["Why did you think that is a valid number of divisions?", "Helpful Suggestion: try an integer"]
     print("\n" + random.choice(msg))
+    raise SystemExit(0)
+
+try: zoom = input("\nWould you like the image zoomed in our out (ex. 'in'): ")
+except ValueError:
+    print("\nI don't know how you manged to mess this one up...")
+    raise SystemExit(0)
+
+try: scale = {
+        "in": 1,
+        "out": 2
+    } [zoom]
+except KeyError:
+    print("\nThe only valid options are 'in' and 'out'")
     raise SystemExit(0)
 
 try: r1, r2 = [int(r) for r in tuple(input("\nEnter the desired image resolution, separated by a space (ex: '1080 1080'): ").split())]
@@ -18,7 +31,7 @@ except ValueError:
     print("\n" + random.choice(msg))
     raise SystemExit(0)
 
-try: filename = input("\nEnter the desired filename to output the image to (ex. example.png) (don't accidentally overwrite anything...): ")
+try: filename = input("\nEnter the desired filename to output the image to (ex. 'example.png') (don't accidentally overwrite anything...): ")
 except ValueError:
     print("\nInvalid input on the very last one? Back to the top!")
     raise SystemExit(0)
@@ -40,7 +53,7 @@ for c in c1, c2, c3:
         "brown": [0.6, 0.3, 0.1],
         "black": [0, 0, 0],
         "white": [1, 1, 1]
-    }[c])
+    } [c])
     except KeyError:
         color = [int(x, 16) / 256 for x in re.compile('[0-9a-fA-F]{2}').findall(c)]
         
@@ -50,13 +63,11 @@ for c in c1, c2, c3:
         
         colors.append(color)
             
-
-
 # Canvas setup
 surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, r1, r2)
 ctx = cairo.Context(surface)
-ctx.scale(max(r1,r2), max(r1,r2))
-ctx.translate(0.5, 0.5) # Center the drawing
+ctx.scale(max(r1,r2) / scale, max(r1,r2) / scale)
+ctx.translate(0.5 * scale, 0.5 * scale) # Center the drawing
 
 # Create first layer of triangles
 triangles = []
@@ -112,12 +123,12 @@ ctx.set_line_join(cairo.LINE_JOIN_ROUND)
 
 # Draw outlines
 for shape, v1, v2, v3 in triangles:
-    ctx.move_to(v3.real, v3.imag)
+    ctx.move_to(v2.real, v2.imag)
     ctx.line_to(v1.real, v1.imag)
-    ctx.line_to(v2.real, v2.imag)
+    ctx.line_to(v3.real, v3.imag)
 
 ctx.set_source_rgb(colors[2][0], colors[2][1], colors[2][2]) 
-ctx.set_line_width(divisions ** -3)
+ctx.set_line_width(divisions ** -3) if divisions > 3 else ctx.set_line_width(divisions ** -5)
 ctx.stroke()
 
 surface.write_to_png(filename)
