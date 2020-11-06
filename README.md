@@ -39,7 +39,7 @@ When running the code, you will be prompted to enter 4 pieces of information:
 
 While the customizability and most of the rendering logistics were created by me, I had help with the mathematical portion of the code.
 
-[Preshing.com](https://preshing.com/) has a great article [here](https://preshing.com/20110831/penrose-tiling-explained/) on how the theory behind this works, and some python code that I based my own code off of. 
+[Preshing.com](https://preshing.com/) has a great article [here](https://preshing.com/20110831/penrose-tiling-explained/) on how the theory behind this works, and some code that I based my own code off of. 
 
 A basic rundown of the functionality of my code is:
 1. Prompt the user for the customization options,then parse them and raise errors if they are not correct
