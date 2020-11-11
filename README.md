@@ -56,18 +56,18 @@ A basic rundown of the functionality of my code is:
 ### Examples
 
 #### 2 Tiling Layers
-![penrose2-1.png](penrose2-1.png)&nbsp;![penrose2-2.png](penrose2-2.png)&nbsp;![penrose2-3.png](penrose2-3.png)
+![penrose2-1.png](examples/penrose2-1.png)&nbsp;&nbsp;![penrose2-2.png](examples/penrose2-2.png)&nbsp;![penrose2-3.png](examples/penrose2-3.png)
 
 #### 5 Tiling Layers
-![penrose5-1.png](penrose5-1.png)
+![penrose5-1.png](examples/penrose5-1.png)
 
 #### 7 Tiling Layers
-![penrose7-1.png](penrose7-1.png)
-![penrose7-2.png](penrose7-2.png)
-![penrose7-3.png](penrose7-3.png)
+![penrose7-1.png](examples/penrose7-1.png)
+![penrose7-2.png](examples/penrose7-2.png)
+![penrose7-3.png](examples/penrose7-3.png)
 
 #### 10 Tiling Layers
-![penrose10-1.png](penrose10-1.png)
+![penrose10-1.png](examples/penrose10-1.png)
 
 #### 13 Tiling Layers (8k resolution)
-![penrose13-1.png](penrose13-1.png)
+![penrose13-1.png](examples/penrose13-1.png)

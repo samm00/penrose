@@ -62,6 +62,8 @@ for c in c1, c2, c3:
             raise SystemExit(0)
         
         colors.append(color)
+
+base = 5 # Eventuall, more bases will be supported (meaning instead of based on five, based on 7 or something)
             
 # Canvas setup
 surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, r1, r2)
@@ -71,11 +73,13 @@ ctx.translate(0.5 * scale, 0.5 * scale) # Center the drawing
 
 # Create first layer of triangles
 triangles = []
-for i in range(10):
-    v2 = cmath.rect(1, (2*i - 1) * math.pi / 10)
-    v3 = cmath.rect(1, (2*i + 1) * math.pi / 10)
+for i in range(base * 2):
+    v2 = cmath.rect(1, (2*i - 1) * math.pi / (base * 2))
+    v3 = cmath.rect(1, (2*i + 1) * math.pi / (base * 2))
+    
     if i % 2 == 0:
         v2, v3 = v3, v2  # Mirror every other triangle
+    
     triangles.append(("thin", 0, v2, v3))
 
 phi = (5 ** 0.5 + 1) / 2 # Golden ratio
@@ -87,6 +91,7 @@ for i in range(divisions):
         if shape == "thin":
             # Divide thin rhombus
             p1 = v1 + (v2 - v1) / phi
+            p4 = 
             new_triangles += [("thin", v3, p1, v2), ("thicc", p1, v3, v1)]
         else:
             # Divide thicc rhombus
@@ -118,7 +123,7 @@ ctx.fill()
 
 # Determine line width
 shape, v1, v2, v3 = triangles[0]
-ctx.set_line_width(abs(v2 - v1) / 10.0)
+ctx.set_line_width(abs(v2 - v1) / (base * 2))
 ctx.set_line_join(cairo.LINE_JOIN_ROUND)
 
 # Draw outlines
