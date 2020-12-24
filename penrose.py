@@ -91,7 +91,6 @@ for i in range(divisions):
         if shape == "thin":
             # Divide thin rhombus
             p1 = v1 + (v2 - v1) / phi
-            p4 = 
             new_triangles += [("thin", v3, p1, v2), ("thicc", p1, v3, v1)]
         else:
             # Divide thicc rhombus
