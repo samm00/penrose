@@ -3,37 +3,32 @@ import math, cmath, cairo, random, re
 # User input
 try: divisions = int(input("Enter the desired number of tiling layers/subdivisions (ex. '7'): "))
 except ValueError:
-    msg = ["Why did you think that is a valid number of divisions?", "Helpful Suggestion: try an integer"]
-    print("\n" + random.choice(msg))
+    print("\nInvalid input: Only integers above 0 work")
     raise SystemExit(0)
 
-try: zoom = input("\nWould you like the image zoomed in our out (ex. 'in'): ")
+try: zoom = input("Would you like the image zoomed in our out (ex. 'in'): ")
 except ValueError:
-    print("\nI don't know how you manged to mess this one up...")
+    print("\nInvalid input: The only valid options are 'in' and 'out'")
     raise SystemExit(0)
 
-try: scale = {
-        "in": 1,
-        "out": 2
-    } [zoom]
+try: scale = {"in": 1, "out": 2}[zoom]
 except KeyError:
-    print("\nThe only valid options are 'in' and 'out'")
+    print("\nInvalid input: The only valid options are 'in' and 'out'")
     raise SystemExit(0)
 
-try: r1, r2 = [int(r) for r in tuple(input("\nEnter the desired image resolution, separated by a space (ex: '1080 1080'): ").split())]
+try: r1, r2 = [int(r) for r in tuple(input("Enter the desired image resolution, separated by a space (ex: '1080 1080'): ").split())]
 except ValueError:
-    print("\nI get that this one is a bit trickier; the format should be: ['integer' 'integer']")
+    print("\nInvalid input: the format should be: ['integer' 'integer']")
     raise SystemExit(0)
 
-try: c1, c2, c3 = tuple(input("\nEnter the desired colors, separated by spaces (ex: 'red blue grey'): ").split())
+try: c1, c2, c3 = tuple(input("Enter the desired colors, separated by spaces (ex: 'red blue grey'): ").split())
 except ValueError:
-    msg = ["The format should be: ['color' 'color' 'color']", "Really? You got the last one formatted right."]
-    print("\n" + random.choice(msg))
+    print("\nInvalid input: The format should be: ['color' 'color' 'color']")
     raise SystemExit(0)
 
-try: filename = input("\nEnter the desired filename to output the image to (ex. 'example.png') (don't accidentally overwrite anything...): ")
+try: filename = input("Enter the desired filename to output the image to (ex. 'example.png') (don't accidentally overwrite anything...): ")
 except ValueError:
-    print("\nInvalid input on the very last one? Back to the top!")
+    print("\nInvalid input")
     raise SystemExit(0)
 if re.compile('\.png$').search(filename) is None:
     print("\nYou've got to include the .png at the end!")
