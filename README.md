@@ -4,7 +4,7 @@
 
 This is a highly customizable penrose tiling generator using python.
 
-A penrose tiling is a tiling of shapes (in this code, a thin and a thicc rhombus) that has five-fold roational symmetry, reflection symmetry, but not translational symmetry. What this means is that the pattern will never repeat, even if you continue it to infinity.
+A penrose tiling is a tiling of shapes (in this code, a thin and a thick rhombus) that has five-fold roational symmetry, reflection symmetry, but not translational symmetry. What this means is that the pattern will never repeat, even if you continue it to infinity.
 
 For more on penrose tilings, you may wish to consult the [wiki page](https://en.wikipedia.org/wiki/Penrose_tiling).
 
@@ -29,7 +29,7 @@ When running the code, you will be prompted to enter 5 pieces of information:
     - Example: `1080 1080`
 - Colors
     - Here you can have fun and pick the colors you want the tiling to be in
-    - You can choose the color of the thin rhombi, the thicc rhombi, and the outline
+    - You can choose the color of the thin rhombi, the thick rhombi, and the outline
     - Presets: `red`, `orange`, `yellow`, `green`, `blue`, `purple`, `grey`, `brown`, `black`, `white`
     - Hex Color Codes are also supported - ex. `a48432`
     - If you really want to have some fun (or are lazy like me), use `random`
